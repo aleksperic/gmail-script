@@ -29,7 +29,7 @@ msg.attach(MIMEText(message, 'plain'))
 text = msg.as_string()
 
 try:
-    server.sendmail('aca.peric93@gmail.com', 'aleksandar.peric@icloud.com', text)
+    server.sendmail(msg['FROM'], msg['TO'], text)
 except:
     print('Something went wrong!')
     exit(1)
